@@ -117,23 +117,44 @@ return {
 				settings = {
 					pylsp = {
 						plugins = {
-							flake8 = {
-								enabled = true,
-								maxLineLength = 88, -- Black's line length
-							},
+							--flake8 = {
+							--	enabled = true,
+							--	maxLineLength = 88, -- Black's line length
+							--},
 							-- Disable plugins overlapping with flake8
 							pycodestyle = {
-								enabled = true,
+								enabled = false,
 							},
 							mccabe = {
-								enabled = true,
+								enabled = false,
 							},
 							pyflakes = {
-								enabled = true,
+								enabled = false,
 							},
 							-- Use Black as the formatter
 							autopep8 = {
+								enabled = false,
+							},
+
+							yapf = {
 								enabled = true,
+							},
+
+							pylint = {
+								enabled = true,
+								executable = "pylint",
+							},
+
+							pylsp_mypy = {
+								enabled = true,
+							},
+
+							jedi_completion = {
+								fuzzy = true,
+							},
+
+							pyls_isort = {
+								enabled = false,
 							},
 						},
 					},
