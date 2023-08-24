@@ -9,6 +9,8 @@ return {
 			"folke/neodev.nvim",
 			"RRethy/vim-illuminate",
 			"hrsh7th/cmp-nvim-lsp",
+			"nvim-lua/plenary.nvim",
+			'mfussenegger/nvim-dap',
 		},
 		config = function()
 			-- Set up Mason before anything else
@@ -44,7 +46,7 @@ return {
 				signs = {
 					active = signs,
 				},
-				update_in_insert = true,
+				update_in_insert = false,
 				underline = true,
 				severity_sort = true,
 				float = {
