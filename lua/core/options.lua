@@ -21,3 +21,4 @@ vim.cmd.colorscheme(colorscheme)
 vim.opt.list = true
 vim.opt.listchars:append "space:⋅"
 --vim.opt.listchars:append "eol:↴"
+vim.opt.clipboard = "unnamedplus"
