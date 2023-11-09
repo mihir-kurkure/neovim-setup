@@ -1,6 +1,7 @@
 return {
   {
     "lukas-reineke/indent-blankline.nvim",
+    version = "2.20.8",
     config = function()
       require("indent_blankline").setup {
         -- for example, context is off by default, use this to turn it on
