@@ -11,6 +11,7 @@ return {
 			"hrsh7th/cmp-nvim-lsp",
 			"nvim-lua/plenary.nvim",
 			'mfussenegger/nvim-dap',
+			"p00f/clangd_extensions.nvim",
 		},
 		config = function()
 			-- Set up Mason before anything else
@@ -20,6 +21,7 @@ return {
 					"lua_ls",
 					"pylsp",
 					"rust_analyzer",
+					"clangd",
 				},
 				automatic_installation = true,
 			})
@@ -121,6 +123,9 @@ return {
 			--	capabilities = capabilities,
 
 			--})
+
+			-- C++
+			require("lspconfig")["clangd"].setup({})
 
 		end,
 	},
