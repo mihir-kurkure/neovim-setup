@@ -115,7 +115,7 @@ return {
 			})
 
 			-- Python
-			require("lspconfig")["pyright"].setup({})
+			require("lspconfig")["pylsp"].setup({})
 
 			--Rust
 			--require("lspconfig")["rust_analyzer"].setup({
@@ -125,7 +125,27 @@ return {
 			--})
 
 			-- C++
-			require("lspconfig")["clangd"].setup({})
+			require("lspconfig")["clangd"].setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+				filetypes = {"h", "c", "cpp", "cc", "obc", "objcpp", "hpp"},
+				-- flags = lsp_flags,
+				cmd = {
+					"clangd",
+					"--background-index",
+					"--header-insertion=never",
+					"--log=verbose",
+					"--pretty",
+				},
+				single_file_support = true,
+				-- root_dir = lspconfig.util.root_pattern(
+				-- 	'.clangd',
+				-- 	'.clang-tidy',
+				-- 	'.clang-format',
+				-- 	'compile_flags.txt',
+				-- 	'.git'
+				-- )
+			})
 
 		end,
 	},
